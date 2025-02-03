@@ -18,6 +18,6 @@ RUN echo "Checking for 'apt.txt'..." \
 USER ${NB_USER}
 
 ## Run an install.R script, if it exists.
-RUN R -e "install.packages('renv')"
+RUN R -e "install.packages('renv', repo='https://cloud.r-project.org/')"
 
 RUN R -e "renv::restore()"
