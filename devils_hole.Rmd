@@ -18,6 +18,11 @@ jupyter:
 ---
 
 ```{r, include = FALSE}
+# This document is adapted from a vignette in the `isogeochem` package
+# https://github.com/davidbajnai/isogeochem
+```
+
+```{r, include = FALSE}
 #> Save the user's options and parameters
 oldpar = par()
 ```
