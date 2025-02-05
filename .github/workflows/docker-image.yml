@@ -1,5 +1,9 @@
-name: Test
-on: workflow_dispatch
+name: cache docker image
+on: 
+  pull_request:
+    paths:
+      - 'Dockerfile'
+      - 'install.R'
 
 jobs:
   binder:
