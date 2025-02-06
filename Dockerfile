@@ -1,5 +1,5 @@
 #Trigger1
-FROM rocker/r-ver:4
+FROM rocker/binder:4
 RUN R -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-project.org'))"
 WORKDIR /home/docker_renv
 COPY renv.lock renv.lock
