@@ -28,18 +28,9 @@ jobs:
 
       - uses: r-lib/actions/setup-renv@v2
 
-      - name: debug
-        run: |
-          echo ($(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '[.]Rmd$'))
-          
-      
-      - name: Find Rmd file
-        run: |
-          RMD_PATH=$(grep '[.]Rmd')
-
       - name: Render md
         run: |    
-          Rscript -e 'for (f in commandArgs(TRUE)) if (file.exists(f)) rmarkdown::render(f, output_format = "md_document")' ${RMD_PATH[*]}
+          Rscript -e 'for (f in commandArgs(TRUE)) if (file.exists(f)) rmarkdown::render(f, output_format = "md_document")' "devils_hole.Rmd"
 
       - name: Commit md
         run: |    
