@@ -1,4 +1,4 @@
-## Reproducible R workflow
+# Reproducible R workflow
 This repo demonstrates the use of GitHub Actions for sharing a reproducible workflow in R
 
 ## Filesystem structure
