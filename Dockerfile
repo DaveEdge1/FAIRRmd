@@ -1,4 +1,4 @@
-#use rocker/binder image
+#start from rocker/binder image
 FROM rocker/binder:4
 
 ## Declares build arguments
