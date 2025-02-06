@@ -55,10 +55,11 @@ library("isogeochem")
 Data can be loaded into R in many ways. For example, to load data from an excel file you could use the `openxlsx` package. For this vignette, however, lets specify the measured *∆*<sub>47</sub> values manually:
 
 ```{r}
-# D47(CDES90) values of Devils Hole carbonates 
-DH_D47     = c(0.573, 0.575, 0.572, 0.581, 0.575, 0.575, 0.570, 0.574, 0.568, 0.575)
-DH_D47_err = c(0.003, 0.007, 0.003, 0.005, 0.006, 0.003, 0.005, 0.005, 0.007, 0.005)
-DH_D47_age = c(10.70, 36.00, 90.35, 122.75, 180.45, 236.65, 295.15, 355.65, 380.05, 496.65)
+# D47(CDES90) values of Devils Hole carbonates
+df2 <- read.csv("https://figshare.com/ndownloader/files/52189304")
+DH_D47 <- df2$DH_D47
+DH_D47_err <- df2$DH_D47_err
+DH_D47_age <- df2$DH_D47_age
 ```
 
 There are datasets available in `isogeochem`, which can be used simply by typing their name. For example, the `devilshole` dataset includes the original *δ*<sup>18</sup>O composite time series from the Devils Hole caves.
