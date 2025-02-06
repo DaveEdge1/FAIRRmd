@@ -1,6 +1,29 @@
 # Reproducible R workflow
 This repo demonstrates the use of GitHub Actions for sharing a reproducible workflow in R
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/DaveEdge1/Devils_Hole2/HEAD?urlpath=rstudio)
+## Reproducing this workflow
+
+### MyBinder (easiest option)
+
+Click the Binder badge above. An RStudio session will launch in your browser after the the container initializes (usually about 60 seconds).
+
+### Locally in RStudio
+
+1. Clone this repository
+2. Open the Rproj file using RStudio
+3. Run `renv::restore()`
+4. Open the devils_hole.Rmd file - it's ready to use!
+
+### Locally with Docker
+
+1. Start your Docker (or podman) engine
+2. Open your terminal
+3. pull the image `docker pull davidedge/devils_hole2`
+4. run the container `docker run -e PASSWORD=rstudio --rm -ti -p 8787:8787 --user root davidedge/devils_hole2 /init`
+5. open a browser window to `http://127.0.0.1:8787/`
+6. enter the username: `rstudio` and passowrd: `rstudio`
+
 ## Filesystem structure
 (not all files are listed here)
 
