@@ -56,7 +56,7 @@ Data can be loaded into R in many ways. For example, to load data from an excel 
 
 ```{r}
 # D47(CDES90) values of Devils Hole carbonates
-df2 <- read.csv("https://figshare.com/ndownloader/files/52189304")
+df2 <- read.csv(url("https://figshare.com/ndownloader/files/52189304"))
 DH_D47 <- df2$DH_D47
 DH_D47_err <- df2$DH_D47_err
 DH_D47_age <- df2$DH_D47_age
