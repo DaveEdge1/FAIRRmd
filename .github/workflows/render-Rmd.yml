@@ -34,6 +34,6 @@ jobs:
           Rscript -e 'for (f in commandArgs(TRUE)) if (file.exists(f)) rmarkdown::render(f, output_format = "md_document")' ${RMD_PATH[*]}
           git config --local user.name "$GITHUB_ACTOR"
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
-          git add *.md
+          git add \*.md
           git commit -m 'Re-build Rmarkdown file' || echo "No changes to commit"
           git push origin || echo "No changes to commit"
