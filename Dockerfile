@@ -16,7 +16,3 @@ ENV RENV_PATHS_LIBRARY renv/library
 
 #restore environment from lockfile
 RUN R -e "renv::restore()"
-
-#add Rmd file to image
-WORKDIR /home
-COPY devils_hole.Rmd devils_hole.Rmd
