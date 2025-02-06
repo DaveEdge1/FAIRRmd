@@ -52,7 +52,7 @@ library("isogeochem")
 
 ## Load data
 
-Data can be loaded into R in many ways. For example, to load data from an excel file you could use the `openxlsx` package. For this vignette, however, lets specify the measured *∆*<sub>47</sub> values manually:
+Data can be loaded into R in many ways. For example, to load data from an excel file you could use the `openxlsx` package. To follow FAIR principles, however, we have put the data on figshare:
 
 ```{r}
 # D47(CDES90) values of Devils Hole carbonates
