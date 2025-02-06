@@ -1,6 +1,6 @@
 name: cache docker image
 on: 
-  pull_request:
+  push:
     paths:
       - 'Dockerfile'
       - 'install.R'
