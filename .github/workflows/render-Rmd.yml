@@ -28,11 +28,21 @@ jobs:
 
       - uses: r-lib/actions/setup-renv@v2
 
-      - name: Find Rmd file, Render and commit md
+      - name: debug
         run: |
           echo ($(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '[.]Rmd$'))
+          
+      
+      - name: Find Rmd file
+        run: |
           RMD_PATH=$(grep '[.]Rmd')
+
+      - name: Render md
+        run: |    
           Rscript -e 'for (f in commandArgs(TRUE)) if (file.exists(f)) rmarkdown::render(f, output_format = "md_document")' ${RMD_PATH[*]}
+
+      - name: Commit md
+        run: |    
           git config --local user.name "$GITHUB_ACTOR"
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git add devils_hole.md
