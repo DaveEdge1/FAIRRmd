@@ -30,7 +30,7 @@ The renv.lock file is used to reproduce the environment needed to run the workfl
 
 Learn to use `renv` here: [renv](https://rstudio.github.io/renv/articles/renv.html)
 
-## Dockerfile (<strong>note that there are two in this repo!</strong>)
+### Dockerfile (<strong>note that there are two in this repo!</strong>)
 
 This Dockerfile begins with a [base image from rocker](https://rocker-project.org/images/versioned/binder.html). The image contains R version 4 and is configured to run RStudio in Binder
 
@@ -48,7 +48,7 @@ The GitHub Action also pushes the image to a repository. This image underlies th
 
 To ensure the RMarkdown document [devils_hole.Rmd](https://github.com/DaveEdge1/Devils_Hole2/blob/master/devils_hole.Rmd) is reproducible, it is rendered as a GitHub-compatible markdown document [devils_hole.md](https://github.com/DaveEdge1/Devils_Hole2/blob/master/devils_hole.md) through a second GitHub Action. The action is triggered any time the RMarkdown document is altered.
 
-### MyBinder
+## MyBinder
 
 The R environment used in this repository can also be launched in RStudio on the web 
 
