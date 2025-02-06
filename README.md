@@ -1,6 +1,14 @@
 ## Reproducible R workflow
 This repo demonstrates the use of GitHub Actions for sharing a reproducible workflow in R
 
+## Filesystem structure
+
+* Top
+  * Dockerfile
+  * devils_hole.Rmd
+  * devils_hole.md
+  * renv.lock
+
 The ".github/workflows" directory contains two actions:
 
 1. docker-image.yml
