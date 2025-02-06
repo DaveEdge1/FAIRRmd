@@ -4,6 +4,7 @@ on:
     paths:
       - 'Dockerfile'
       - '**.Rmd'
+  workflow_dispatch:
 
 jobs:
   binder:
