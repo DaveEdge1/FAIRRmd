@@ -24,7 +24,9 @@ jobs:
           
       # install linux packages
       - name: install linux packages
-        run: sudo apt-get install -y libgit2-dev libcurl4-openssl-dev
+        run: |
+          sudo apt-get update
+          sudo apt-get -y install binutils-dev libcurl4-openssl-dev zlib1g-dev libdw-dev libiberty-dev
 
       - uses: r-lib/actions/setup-pandoc@v2
 
