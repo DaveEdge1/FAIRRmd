@@ -21,7 +21,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          
+
+      # install linux packages
+      - name: install linux packages
+        run: |
+          sudo apt-get update
+          sudo apt-get -y install binutils-dev libcurl4-openssl-dev libssl-dev
+
       # install linux packages
       #- name: install linux packages
       #  run: |
@@ -45,7 +51,7 @@ jobs:
           library(pak);
           lockfile <- fromJSON('renv.lock');
           packages <- names(lockfile\$Packages);
-          pak::pkg_sysreqs(pkg=packages, sysreqs_platform = "ubuntu");
+          pak::pkg_sysreqs(pkg=packages, sysreqs_platform = "ubuntu", dependencies = TRUE);
           writeLines(sys_deps$install_scripts, 'apt.txt');"
 
       - name: Install System Dependencies
