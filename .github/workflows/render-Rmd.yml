@@ -23,15 +23,37 @@ jobs:
           fetch-depth: 0
           
       # install linux packages
-      - name: install linux packages
-        run: |
-          sudo apt-get update
-          sudo apt-get -y install binutils-dev libcurl4-openssl-dev zlib1g-dev libdw-dev libiberty-dev libfontconfig1-dev libharfbuzz-dev libfribidi-dev \
-          libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev
+      #- name: install linux packages
+      #  run: |
+      #    sudo apt-get update
+      #    sudo apt-get -y install binutils-dev libcurl4-openssl-dev zlib1g-dev libdw-dev libiberty-dev libfontconfig1-dev libharfbuzz-dev libfribidi-dev \
+      #    libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev
 
       - uses: r-lib/actions/setup-pandoc@v2
 
       - uses: r-lib/actions/setup-r@v2
+
+      - name: install jsonlite and pak
+        run: |
+          Rscript -e "install.packages('jsonlite')"
+          Rscript -e "install.packages('pak')"
+
+      - name: Generate apt.txt from renv.lock
+        run: |
+          Rscript -e "
+          library(jsonlite);
+          library(pak);
+          lockfile <- fromJSON('renv.lock');
+          packages <- names(lockfile\$Packages);
+          pak::pkg_sysreqs(pkg=packages, sysreqs_platform = "ubuntu");
+          writeLines(sys_deps$install_scripts, 'apt.txt');"
+
+      - name: Install System Dependencies
+        run: |
+          if [ -f apt.txt ]; then
+            sudo apt-get update -y
+            xargs sudo apt-get install -y < apt.txt
+          fi
 
       - uses: r-lib/actions/setup-renv@v2
 
