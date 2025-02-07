@@ -1,0 +1,9 @@
+---
+output: github_document
+---
+
+```{r, include = FALSE}
+# This document is an example code chunk
+
+1+1
+```
