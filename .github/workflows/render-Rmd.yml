@@ -26,7 +26,8 @@ jobs:
       - name: install linux packages
         run: |
           sudo apt-get update
-          sudo apt-get -y install binutils-dev libcurl4-openssl-dev zlib1g-dev libdw-dev libiberty-dev libfontconfig1-dev libharfbuzz-dev libfribidi-dev
+          sudo apt-get -y install binutils-dev libcurl4-openssl-dev zlib1g-dev libdw-dev libiberty-dev libfontconfig1-dev libharfbuzz-dev libfribidi-dev \
+          libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev
 
       - uses: r-lib/actions/setup-pandoc@v2
 
