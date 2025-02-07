@@ -1,9 +1,16 @@
-# Reproducible Rmd workflow
-This template harnesses GitHub Actions for sharing a reproducible workflow in Rmd format
-
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/<GitHub_Username>/<GitHub_Repo_Name>/HEAD?urlpath=rstudio)
-## Required items
 
+# Reproducible Rmd workflow
+This template harnesses GitHub Actions for sharing a reproducible workflow in Rmd format. What this template offers:
+
+1. Simply uploading the RMarkdown and renv.lock files allows others to reproduce your work locally
+2. A GitHub Action renders your Rmd to a md file simultaneously demonstrating the reproduciblity and sharing the rendered output
+3. A separate action produces a container image that can be used to interact with your workflow in RStudio:
+  a. via MyBinder (link above) in the cloud
+  b. locally with Docker
+4. A citable compendium
+
+## Required items
 1. An RMarkdown document you would like to share
 2. An [renv.lock](https://rstudio.github.io/renv/articles/renv.html) file for this project
 3. Data
