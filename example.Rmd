@@ -1,9 +1,0 @@
----
-output: github_document
----
-
-```{r, include = FALSE}
-# This is an example code chunck
-
-1+1
-```
