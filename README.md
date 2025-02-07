@@ -1,7 +1,54 @@
-# Reproducible R workflow
-This repo demonstrates the use of GitHub Actions for sharing a reproducible workflow in R
+# Reproducible Rmd workflow
+This template harnesses GitHub Actions for sharing a reproducible workflow in Rmd format
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/DaveEdge1/Devils_Hole2/HEAD?urlpath=rstudio)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/<GitHub_Username>/<GitHub_Repo_Name>/HEAD?urlpath=rstudio)
+## Required items
+
+1. An RMarkdown document you would like to share
+2. An [renv.lock](https://rstudio.github.io/renv/articles/renv.html) file for this project
+3. Data
+  a. stored in a permanent repository with a DOI (FAIR, eg. Zenodo)
+  b. stored in a file in your repo
+
+## Using this Template
+### Add your workflow file in RMarkdown fomrat
+
+* There is an `example.Rmd` in this template to show you the one required element: "output: github_document"
+* Add your Rmd file and edit the header accordingly
+* Delete the `example.Rmd` file
+
+### Add your renv lock file
+
+* The lock file should come from the R project directory where the Rmd file was created
+
+### Edit the render Rmd workflow
+
+* This workflow is found here: ".github/workflows/render-Rmd.yml"
+* Change the name of the referenced Rmd and md files on lines 33 and 36 (the output md file will have the same name, just a different extentsion)
+
+### Add repository secrets
+
+* In order to push the container image to your Docker Hub, you'll need to give your login credentials to GitHub (they are stored securely)
+* Settings -> Secretes and Variables -> Actions -> New repository secret
+  * Add DOCKER_USERNAME
+  * Add DOCKER_PASSWORD
+
+### Test it out!
+
+* Make a change to the Rmd file to trigger the actions (The workflows are set to run anytime a change is made to the Rmd file or the renv.lock file)
+* You can see the progress unfold in the 'Actions' tab of your repo
+* Share your feedback/troubles [here](https://github.com/DaveEdge1/FAIRRmd/issues)
+
+### Edit this README file
+
+* Edit the Binder badge at the top with the correct 'GitHub_Username' 'GitHub_Repo_Name' (remove the "<>")
+* Add relevant details about the data and workflow, including citation info
+
+### Make it citable
+
+* Make sure you are happy with the REAME and the md file as they are before proceeding!
+* Follow the instructions [here](https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content) to get a DOI for your repo and add the Zenodo badge to your README
+
 ## Reproducing this workflow
 
 ### MyBinder (easiest option)
