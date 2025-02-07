@@ -51,7 +51,7 @@ jobs:
           library(pak);
           lockfile <- fromJSON('renv.lock');
           packages <- names(lockfile\$Packages);
-          pak::pkg_sysreqs(pkg=packages, sysreqs_platform = "ubuntu", dependencies = TRUE);
+          pak::pkg_sysreqs(pkg=packages, sysreqs_platform = 'ubuntu', dependencies = TRUE);
           writeLines(sys_deps$install_scripts, 'apt.txt');"
 
       - name: Install System Dependencies
