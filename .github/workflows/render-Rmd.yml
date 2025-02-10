@@ -65,7 +65,6 @@ jobs:
 
       - name: Render and commit md
         run: |    
-          GITHUB_ACTOR: ${{ github.actor }}
           Rscript -e 'for (f in commandArgs(TRUE)) if (file.exists(f)) rmarkdown::render(f, output_format = "md_document")' "example.Rmd" 
           git config --local user.name ${{ github.actor }}
           git config --local user.email "${{ github.actor }}@users.noreply.github.com"
