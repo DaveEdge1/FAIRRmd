@@ -11,7 +11,7 @@ permissions: read-all
 
 jobs:
   render-rmarkdown:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     permissions:
@@ -23,10 +23,10 @@ jobs:
           fetch-depth: 0
 
       # install linux packages
-      - name: install linux packages
-        run: |
-          sudo apt-get update
-          sudo apt-get -y install binutils-dev libcurl4-openssl-dev libssl-dev
+      # - name: install linux packages
+      #   run: |
+      #     sudo apt-get update
+      #     sudo apt-get -y install binutils-dev libcurl4-openssl-dev libssl-dev
 
       # install linux packages
       #- name: install linux packages
@@ -54,12 +54,12 @@ jobs:
           pak::pkg_sysreqs(pkg=packages, sysreqs_platform = 'ubuntu', dependencies = TRUE);
           writeLines(sys_deps$install_scripts, 'apt.txt');"
 
-      - name: Install System Dependencies
-        run: |
-          if [ -f apt.txt ]; then
-            sudo apt-get update -y
-            xargs sudo apt-get install -y < apt.txt
-          fi
+      # - name: Install System Dependencies
+      #  run: |
+      #    if [ -f apt.txt ]; then
+      #      sudo apt-get update -y
+      #      xargs sudo apt-get install -y < apt.txt
+      #    fi
 
       - uses: r-lib/actions/setup-renv@v2
 
