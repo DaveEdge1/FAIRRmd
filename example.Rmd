@@ -3,11 +3,12 @@ output: github_document
 ---
 
 ```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 ```
 
 ## Tidyverse example plot
-```{r, echo = TRUE, cache=TRUE}
+```{r}
 # This document is an short example
 
 mtcars_tb <- rownames_to_column(mtcars, var = "car") %>% 
