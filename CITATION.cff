@@ -5,7 +5,7 @@ authors:
   given-names: "David"
   orcid: "https://orcid.org/0000-0001-6938-2850"
 title: "FAIRRmd"
-version: 1.0.0
+version: 0.0.0
 doi: 10.5281/zenodo.14846119
 date-released: 2025-02-10
 url: "https://github.com/DaveEdge1/FAIRRmd"
