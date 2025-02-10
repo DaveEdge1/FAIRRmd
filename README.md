@@ -1,5 +1,7 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/<GitHub_Username>/<GitHub_Repo_Name>/HEAD?urlpath=rstudio)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14846119.svg)](https://doi.org/10.5281/zenodo.14846119)
+
 # Reproducible Rmd workflow
 This template harnesses GitHub Actions for sharing a reproducible workflow in Rmd format. What this template offers:
 
