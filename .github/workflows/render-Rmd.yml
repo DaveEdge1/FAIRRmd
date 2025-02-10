@@ -66,10 +66,9 @@ jobs:
       - name: Render and commit md
         run: |    
           GITHUB_ACTOR: ${{ github.actor }}
-          echo GITHUB_ACTOR
           Rscript -e 'for (f in commandArgs(TRUE)) if (file.exists(f)) rmarkdown::render(f, output_format = "md_document")' "example.Rmd" 
-          git config --local user.name "%GITHUB_ACTOR%"
-          git config --local user.email "%GITHUB_ACTOR%@users.noreply.github.com"
+          git config --local user.name ${{ github.actor }}
+          git config --local user.email "${{ github.actor }}@users.noreply.github.com"
           git add example.md
           git commit -m 'Re-build Rmarkdown file' || echo "No changes to commit"
           git push -f origin
