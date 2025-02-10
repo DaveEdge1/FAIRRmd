@@ -2,21 +2,49 @@
 output: github_document
 ---
 
+```{r, include = FALSE}
+# This document is adapted from the vignette 'Devil's Hole' in the `isogeochem` package
+# https://github.com/davidbajnai/isogeochem
+```
+
+```{r, include = FALSE}
+#> Save the user's options and parameters
+oldpar = par()
+```
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  message = FALSE,
+  eval = TRUE,
+  fig.path = "figures/devils_hole-",
+  fig.height = 4,
+  fig.width = 8,
+  dpi = 150,
+  out.width = "100%"
+)
+knitr::opts_knit$set(global.par = TRUE)
+```
+
+```{r, include = FALSE}
+#> Set new parameters for this vignette.
+par(mfrow = c(1, 1), mar = c(4.5, 4.5, 0.3, 0.3), bg = "white")
+```
+
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-library(tidyverse)
 ```
 
 ## Tidyverse example plot
 ```{r}
-# This document is an short example
-
+library(tidyverse)
 mtcars_tb <- rownames_to_column(mtcars, var = "car") %>% 
   as_tibble()
 
-plot1 <- ggplot(data=mtcars_tb, mapping = aes(x=mpg, y=hp, label=car)) + geom_point() + geom_label() + ggtitle("Mileage vs Horsepower")
+head(mtcars_tb)
 ```
 
-```{r, fig.width=6}
-plot1
+```{r}
+ggplot(data=mtcars_tb, mapping = aes(x=mpg, y=hp, label=car)) + geom_point() + geom_label() + ggtitle("Mileage vs Horsepower")
 ```
