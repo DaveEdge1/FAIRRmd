@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14846119.svg)](https://doi.org/10.5281/zenodo.14846119)
 
-# Reproducible Rmd workflow
+# FAIRRmd - Sharing Reproducible Rmd workflows
 This template harnesses GitHub Actions for sharing a reproducible workflow in Rmd format. What this template offers:
 
 1. Simply uploading the RMarkdown and renv.lock files allows others to reproduce your work locally
