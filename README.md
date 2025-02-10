@@ -4,11 +4,11 @@
 This template harnesses GitHub Actions for sharing a reproducible workflow in Rmd format. What this template offers:
 
 1. Simply uploading the RMarkdown and renv.lock files allows others to reproduce your work locally
-2. A GitHub Action renders your Rmd to a md file simultaneously demonstrating the reproduciblity and sharing the rendered output
-3. A separate action produces a container image that can be used to interact with your workflow in RStudio:
-  a. via MyBinder (link above) in the cloud
+2. A GitHub Action knits your RMarkdown and renders it as a GitHub Markdown file in your repository, simultaneously demonstrating the reproduciblity and sharing the rendered output
+3. A separate Action produces a container image that can be used to interact with your workflow in RStudio:<br>
+  a. via MyBinder (link above) in the cloud <br>
   b. locally with Docker
-4. A citable compendium
+5. The repository release linked to Zenodo becomes a citable compendium
 
 ## Required items
 1. An RMarkdown document you would like to share
@@ -21,17 +21,21 @@ This template harnesses GitHub Actions for sharing a reproducible workflow in Rm
 ### Add your workflow file in RMarkdown fomrat
 
 * There is an `example.Rmd` in this template to show you the one required element: "output: github_document"
-* Add your Rmd file and edit the header accordingly
-* Delete the `example.Rmd` file
+* Much of the early setup code could be recycled for your RMarkdown document for appropriate rendering in GitHub Markdown format
+* Add your Rmd code and edit the header with Author, Date, etc.
+* Rename the `example.Rmd` file (or delete it if you've brought in your own file)
 
 ### Add your renv lock file
 
-* The lock file should come from the R project directory where the Rmd file was created
+* Delete the existing renv.lock file
+* Your lock file should come from the R project directory where your Rmd file was created
+
+Learn to use `renv` here: [renv](https://rstudio.github.io/renv/articles/renv.html)
 
 ### Edit the render Rmd workflow
 
 * This workflow is found here: ".github/workflows/render-Rmd.yml"
-* Change the name of the referenced Rmd and md files on lines 33 and 36 (the output md file will have the same name, just a different extentsion)
+* Change the name of the referenced Rmd (example.Rmd) and md (example.md) files on lines 33 and 36 (your output md file will have the same name, just a different extentsion)
 
 ### Add repository secrets
 
@@ -83,8 +87,8 @@ Click the Binder badge above. An RStudio session will launch in your browser aft
 
 * Top
   * Dockerfile (builds the R environment from a rocker base image and the renv.lock file)
-  * devils_hole.Rmd (workflow to be shared)
-  * devils_hole.md (rendered workflow)
+  * example.Rmd (workflow to be shared)
+  * example.md (rendered workflow)
   * renv.lock
   * LICENSE
   * README.md (this file)
@@ -97,9 +101,9 @@ Click the Binder badge above. An RStudio session will launch in your browser aft
 
 ## Containerized workflow
 
-### devils_hole.Rmd
+### example.Rmd
 
-This RMarkdown document is a vignette from the `isogeochem` package. This is our example of a reproducible workflow.
+This RMarkdown document is our example of a reproducible workflow.
 
 ### renv
 
