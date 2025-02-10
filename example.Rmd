@@ -2,11 +2,13 @@
 output: github_document
 ---
 
-## Tidyverse example plot
-```{r, include = TRUE}
-# This document is an short example
-
+```{r setup, include = FALSE}
 library(tidyverse)
+```
+
+## Tidyverse example plot
+```{r, echo = TRUE}
+# This document is an short example
 
 mtcars_tb <- rownames_to_column(mtcars, var = "car") %>% 
   as_tibble()
