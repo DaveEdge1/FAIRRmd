@@ -4,7 +4,7 @@ output: github_document
 
 ## Tidyverse example plot
 ```{r, include = FALSE}
-# This document is an example
+# This document is an short example
 
 library(tidyverse)
 
