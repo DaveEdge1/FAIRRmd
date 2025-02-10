@@ -4,7 +4,7 @@ authors:
 - family-names: "Edge"
   given-names: "David"
   orcid: "https://orcid.org/0000-0001-6938-2850"
-title: "FAIRRmd"
+title: "FAIRRmd - Sharing Reproducible Rmd workflows"
 version: 0.0.0
 doi: 10.5281/zenodo.14846119
 date-released: 2025-02-10
